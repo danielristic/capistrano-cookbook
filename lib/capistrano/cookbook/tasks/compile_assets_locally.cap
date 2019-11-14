@@ -9,9 +9,11 @@ namespace :deploy do
         execute"rsync -av ./public/assets/ #{role.user}@#{role.hostname}:#{release_path}/public/assets/;"
       end
       sudo "chmod -R 755 #{release_path}/public/assets/"
+      sudo "chmod -R 755 #{release_path}/public/packs/"
     end
     run_locally do
       execute "rm -rf ./public/assets"
+      execute "rm -rf ./public/packs"
     end
   end
 end
