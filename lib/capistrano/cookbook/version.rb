@@ -1,5 +1,5 @@
 module Capistrano
   module Cookbook
-    VERSION = "0.2.4-patch_ruby27"
+    VERSION = "0.3.0"
   end
 end
