@@ -1,6 +1,10 @@
 module Capistrano
   module Cookbook
     class SetupConfigValues
+      def assets_folders
+        fetch(:assets_folders) || assets_folders_defaults
+      end
+
       def symlinks
         fetch(:symlinks) || symlinks_defaults
       end
@@ -14,6 +18,12 @@ module Capistrano
       end
 
       private
+
+      def assets_folders_defaults
+        %w(
+          assets
+        )
+      end
 
       def symlinks_defaults
         [
